@@ -1,0 +1,52 @@
+<!--<h2>Todos Template</h2>
+
+<ul>  
+    {{#each model as |todo|}}
+        <li>
+            {{todo.title}}
+        </li>
+    {{/each}}
+</ul>  -->
+
+<!-- <input type="text" id="new-todo" placeholder="What needs to be done?" /> -->
+{{todo-input action="createTodo"}}
+<!-- {{#todo-list todos=model}}
+    {{outlet}}
+{{/todo-list}} -->
+{{#todo-list todos=model deleteTodo="deleteTodo"}}
+    {{outlet}}
+{{/todo-list}}
+<!-- <section id="main">  
+    <ul id="todo-list">
+        {{#each model as |todo|}}
+            <li class="completed">
+                <input type="checkbox" class="toggle">
+                <label>{{todo.title}}</label><button class="destroy"></button>
+            </li>
+        {{/each}}
+    </ul>
+
+    <input type="checkbox" id="toggle-all"> 
+    {{outlet}}
+</section>
+
+<footer id="footer">  
+    <span id="todo-count">
+        <strong>2</strong> todos left
+    </span>
+    <ul id="filters">
+        <li>
+            <a href="all" class="selected">All</a>
+        </li>
+        <li>
+            <a href="active">Active</a>
+        </li>
+        <li>
+            <a href="completed">Completed</a>
+        </li>
+    </ul>
+
+    <button id="clear-completed">
+        Clear completed (1)
+    </button>
+</footer>  
